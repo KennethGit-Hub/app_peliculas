@@ -7,11 +7,11 @@ import 'package:app_peliculas/src/models/pelicula_model.dart';
 class PeliculasProvider {
   String _apikey = 'e9b5346384e97565f9276c739c1a6bca';
   String _url = 'api.themoviedb.org';
-  String _language = 'es-Es';
+  String _language = 'es-ES';
 
   Future<List<Pelicula>> getEnCines() async {
     final url = Uri.https(_url, '3/movie/now_playing', {
-      'apikey': _apikey,
+      'api_key': _apikey,
       'language': _language,
     });
 

@@ -60,4 +60,11 @@ class Pelicula {
     overview = json['overview'];
     releaseDate = json['release_date'];
   }
+  getPosterImg() {
+    if (posterPath == null) {
+      return 'https://sascogulf.com/sascogulf-dev/wp-content/uploads/2018/08/No_Image_Available.jpg';
+    } else {
+      return 'https://image.tmdb.org/t/p/w500/$posterPath';
+    }
+  }
 }
