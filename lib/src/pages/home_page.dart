@@ -6,6 +6,8 @@ import 'package:app_peliculas/src/providers/peliculas_provider.dart';
 
 import 'package:app_peliculas/src/widgets/movie_horizontal.dart';
 
+import 'package:app_peliculas/src/search/search_delegate.dart';
+
 class HomePage extends StatelessWidget {
   final peliculasProvider = PeliculasProvider();
 
@@ -15,12 +17,18 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Peliculas eb cines'),
+        title: Text('Aplicacion de Peliculas '),
         backgroundColor: Colors.amberAccent,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              showSearch(
+                context: context,
+                delegate: DataSearch(),
+                query: '',
+              );
+            },
           )
         ],
       ),
